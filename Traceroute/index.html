@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Traceroute</title>
+  <link rel="stylesheet" href="/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+  <style>
+    #mapid {
+      height: 720px;
+    }
+  </style>
+</head>
+
+<div id="mapid"></div>
+<script src="/leaflet/leaflet.js"></script>
+<script src="js/d3.v5.min.js"></script>
+<script>
+  const mymap = L.map('mapid').setView([40, -80], 5);
+
+  const attribution =
+    '&copy; <a href="https://www.openstreetmap.org/copyright">Openstreetmap</a> contributors'
+  const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+  const tiles = L.tileLayer(tileUrl, {
+    attribution
+  });
+  tiles.addTo(mymap);
+
+      var googleicon = L.icon({
+  	  iconUrl: 'markers/google.png',
+      // shadowUrl:'markers/marker-shadow.png',
+
+  	  iconSize: [36, 36], // size of the icon
+     shadowSize: [50, 64], // size of the shadow	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  	  shadowAnchor: [4, 62],  // the same for the shadow
+  	  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+      L.marker([40.714270, -74.005970], {icon: googleicon}).addTo(mymap);
+      L.marker([32.783060, -96.806670], {icon: googleicon}).addTo(mymap);
+      L.marker([52.374030, 4.889690], {icon: googleicon}).addTo(mymap);
+      L.marker([37.405992, -122.078515], {icon: googleicon}).addTo(mymap);
+
+  var popup1 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "google-home-popup"
+  })
+  var polylineGoogleHome = L.polyline([
+      [40.714270, -74.005970],
+      [32.783060, -96.806670],
+      [40.739668, -74.000765],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515]
+    ], {
+      color: '#87FF65',
+      weight: 3,
+      opacity: .9,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup1
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Google from home")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+
+    var youtubeicon = L.icon({
+	  iconUrl: 'markers/youtube.png',
+    // shadowUrl:'markers/marker-shadow.png',
+
+	  iconSize: [36, 36], // size of the icon
+    shadowSize: [50, 64], // size of the shadow	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+	  shadowAnchor: [4, 62],  // the same for the shadow
+	  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    L.marker([40.714270, -74.005970], {icon: youtubeicon}).addTo(mymap);
+    L.marker([33.749000, -118.243680], {icon: youtubeicon}).addTo(mymap);
+    L.marker([33.749000, -84.387980], {icon: youtubeicon}).addTo(mymap);
+    L.marker([41.499500, -81.695410], {icon: youtubeicon}).addTo(mymap);
+    L.marker([52.374030, 4.889690], {icon: youtubeicon}).addTo(mymap);
+    L.marker([37.405992, -122.078515], {icon: youtubeicon}).addTo(mymap);
+
+  var popup2 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "youtube-home-popup"
+  })
+
+  var polylineYoutubeHome = L.polyline([
+      [40.714270, -74.005970],
+      [33.749000, -84.387980],
+      [34.052230, -118.243680],
+      [33.749000, -84.387980],
+      [41.499500, -81.695410],
+      [40.739668, -74.000765],
+      [37.405992, -122.078515],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515]
+    ], {
+      color: '#ACEB98',
+      weight: 3,
+      opacity: .9,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup2
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Youtube from home")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+  var popup3 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "bilibili-home-popup"
+  })
+
+  var polylineBilibiliHome = L.polyline([
+      [40.714270, -74.005970],
+      [32.783060, -96.806670],
+      [33.749000, -84.387980],
+      [41.499500, -81.695410],
+      [34.052230, -118.243680],
+      [40.714270, -74.005970],
+      [38.881010, -77.104280],
+      [29.763280, -95.363270],
+      [32.783060, -96.806670],
+      [37.834440, -122.289060],
+      [39.907500, 116.397230],
+      [33.073500, -96.804400]
+    ], {
+      color: '#A4C2A8',
+      weight: 3,
+      opacity: .9,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup3
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Bilibili from home")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+  // ///////////////////////////////////////////////////////////////////////////
+
+  var popup4 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "google-nyu-popup"
+  })
+
+  var polylineGoogleNYU = L.polyline([
+      [40.714270, -74.005970],
+      [40.735660, -74.172370],
+      [40.714270, -74.005970],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515]
+    ], {
+      color: '#5A5A66',
+      weight: 3,
+      opacity: .7,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup4
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Google from NYU")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+
+  var popup5 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "youtube-nyu-popup"
+  })
+
+  var polylineYoutubeNYU = L.polyline([
+      [40.714270, -74.005970],
+      [40.731323, -73.990092],
+      [40.719938, -74.005012],
+      [40.735660, -74.172370],
+      [40.739668, -74.000765],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515]
+    ], {
+      color: '#787881',
+      weight: 3,
+      opacity: .7,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup5
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Youtube from NYU")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+  var popup6 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "bilibili-nyu-popup"
+  })
+
+  var polylineBilibiliNYU = L.polyline([
+      [40.731323, -73.990092],
+      [40.731323, -73.990092],
+      [40.731323, -73.990092],
+      [40.731323, -73.990092],
+      [40.731323, -73.990092],
+      [40.714270, -74.005970],
+      [32.783060, -96.806670],
+      [32.783060, -96.806670],
+      [39.907500, 116.397230],
+      [33.073500, -96.804400]
+    ], {
+      color: '#5A5A66',
+      weight: 3,
+      opacity: .7,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup6
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Bilibili from NYU")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+  
+  // ///////////////////////////////////////////////////////////////////////////
+  var popup7 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "google-coffee-popup"
+  })
+
+  var polylineGoogleCoffee = L.polyline([
+      [40.714270, -74.005970],
+      [40.714270, -74.005970],
+      [32.783060, -96.806670],
+      [33.749000, -84.387980],
+      [40.714270, -74.005970],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515]
+    ], {
+      color: '#9DC3C2',
+      weight: 3,
+      opacity: .7,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup7
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Google from Coffee Shop")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+
+  var popup8 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "youtube-coffee-popup"
+  })
+
+  var polylineYoutubeCoffee = L.polyline([
+      [40.714270, -74.005970],
+      [40.714270, -74.005970],
+      [32.783060, -96.806670],
+      [34.052230, -118.243680],
+      [33.749000, -84.387980],
+      [40.714270, -74.005970],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515],
+      [52.374030, 4.889690],
+      [37.405992, -122.078515]
+    ], {
+      color: '#77A6B6',
+      weight: 3,
+      opacity: .7,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup8
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Youtube from Coffee Shop")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+
+
+  var popup9 = L.popup({
+    closeButton: true,
+    autoClose: true,
+    className: "bilibili-coffee-popup"
+  })
+
+  var polylineBilibiliCoffee = L.polyline([
+      [40.714270, -74.005970],
+      [40.714270, -74.005970],
+      [40.714270, -74.005970],
+      [41.499500, -81.695410],
+      [34.052230, -118.243680],
+      [34.052230, -118.243680],
+      [38.881010, -77.104280],
+      [29.763280, -95.363270],
+      [29.763280, -95.363270],
+      [29.763280, -95.363270],
+      [32.783060, -96.806670],
+      [37.834440, -122.289060],
+      [39.907500, 116.397230],
+      [33.073500, -96.804400]
+    ], {
+      color: '#505154',
+      weight: 3,
+      opacity: .7,
+      lineJoin: 'round'
+    })
+    .on('mouseover', function(e) {
+      popup9
+        .setLatLng(e.latlng)
+        .setContent("Traceroute Youtube from Coffee Shop")
+        .openOn(mymap);
+    })
+    .addTo(mymap);
+</script>

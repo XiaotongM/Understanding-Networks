@@ -1,0 +1,206 @@
+/*google-home-popup style*/
+.google-home-popup .leaflet-popup-content-wrapper {
+  background: #87FF65;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.google-home-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.google-home-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.google-home-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+/*youtube-home-popup style*/
+.youtube-home-popup .leaflet-popup-content-wrapper {
+  background: #ACEB98;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.youtube-home-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.youtube-home-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.youtube-home-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+/*Bilibili-home-popup style*/
+.bilibili-home-popup .leaflet-popup-content-wrapper {
+  background: #A4C2A8;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.bilibili-home-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.bilibili-home-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.bilibili-home-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/******************************************************************************/
+
+/*Google-NYU-popup style*/
+.google-nyu-popup .leaflet-popup-content-wrapper {
+  background: #787881;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.google-nyu-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.google-nyu-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.google-nyu-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+/*youtbe-nyu-popup style*/
+.youtube-nyu-popup .leaflet-popup-content-wrapper {
+  background: #5A5A66;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.youtube-nyu-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.youtube-nyu-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.youtube-nyu-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+/*bilibili-nyu-popup style*/
+.bilibili-nyu-popup .leaflet-popup-content-wrapper {
+  background: #5A5A66;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.bilibili-nyu-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.bilibili-nyu-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.bilibili-nyu-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+/******************************************************************************/
+/*Google-coffeShop-popup style*/
+.google-coffee-popup .leaflet-popup-content-wrapper {
+  background: #9DC3C2;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.google-coffee-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.google-coffee-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.google-coffee-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+/*youtbe-coffee-popup style*/
+.youtube-coffee-popup .leaflet-popup-content-wrapper {
+  background: #77A6B6;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.youtube-coffee-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.youtube-coffee-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.youtube-coffee-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/*bilibili-coffee-popup style*/
+.bilibili-coffee-popup .leaflet-popup-content-wrapper {
+  background: #77A6B6;
+  color: #eee;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+.bilibili-coffee-popup .leaflet-popup-content-wrapper a {
+  color: rgba(200, 200, 200, 0.1);
+}
+.bilibili-coffee-popup .leaflet-popup-tip-container {
+  width: 50px;
+  height: 6px;
+}
+.bilibili-coffee-popup .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
